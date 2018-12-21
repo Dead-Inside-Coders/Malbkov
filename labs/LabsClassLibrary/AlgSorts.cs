@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabsClassLibrary
 {
-        public class Cases
+        public class Cases 
         {
             public static void Case1()
             {

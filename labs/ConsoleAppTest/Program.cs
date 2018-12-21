@@ -19,25 +19,24 @@ namespace ConsoleAppTest
             Console.WriteLine("3.Алгоритм Кнута-Морриса-Пратта");
             Console.WriteLine("4.Стемминг");
 
-            string input = Console.ReadLine();
+            string input = Console.ReadLine(); 
 
-            int choose = 0;
+            int choose = 0;  
 
-            if (Int32.TryParse(input, out choose))
+            if (int.TryParse(input, out choose))
             {
-
                 switch (choose)
                 {
-                    case 1:
-                        Cases.Case1();
-                        break;
+                    case 1: 
+                        StrCases.Case1();
+                        break; 
                     case 2:
-                        Cases.Case2();
+                        StrCases.Case2();
                         break;
                     case 3:
-                        Cases.Case3();
+                        StrCases.Case3();
                         break;
-                    case 4:
+                    case 4: 
                         Console.WriteLine("Case 4");
                         break;
                     default:
@@ -222,13 +221,13 @@ namespace ConsoleAppTest
         }
     }
 
-      
+       
     class Program
     { 
          
         static void Main(string[] args)
-        {
-            Lab6 l = new Lab6();
+        { 
+            Lab3 l = new Lab3();  
             Console.WriteLine(l.Name);
             l.Menu(); 
                   

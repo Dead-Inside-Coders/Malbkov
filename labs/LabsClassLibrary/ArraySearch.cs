@@ -107,7 +107,7 @@ namespace LabsClassLibrary
         public static int? BinarySearchRec(int[] Elements, int left, int right, int Element)
         {
             Sort(Elements);
-
+             
             if (SearchCheck(Elements, Element))
             {
                 if (left < right) //пока слева и справа от середины есть элементы 
@@ -123,7 +123,7 @@ namespace LabsClassLibrary
                 }
                 else
                     return null;
-            }
+            } 
 
             return null;
         }
