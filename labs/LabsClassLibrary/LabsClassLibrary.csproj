@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ArraySearch.cs" />
     <Compile Include="AlgSorts.cs" />
+    <Compile Include="Deque.cs" />
     <Compile Include="StringSearch.cs" />
     <Compile Include="StackAndQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

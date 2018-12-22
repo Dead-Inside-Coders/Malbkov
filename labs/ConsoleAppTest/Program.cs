@@ -18,7 +18,7 @@ namespace ConsoleAppTest
             Console.WriteLine("2.Алгоритм Рабина");
             Console.WriteLine("3.Алгоритм Кнута-Морриса-Пратта");
             Console.WriteLine("4.Стемминг");
-
+            Console.WriteLine("5.Дек (Лаба 8)");
             string input = Console.ReadLine(); 
 
             int choose = 0;  
@@ -264,21 +264,46 @@ namespace ConsoleAppTest
 
             Console.ReadKey(); 
         }
-    } 
-      
-      
-       
+
+        
+    }
+    public class Lab8
+    {
+
+
+        public  void Deque()
+        {
+            Deque<string> usersDeck = new Deque<string>();
+            usersDeck.AddFirst("Alice");
+            usersDeck.AddLast("Kate");
+            usersDeck.AddLast("Tom");
+            usersDeck.AddLast("Sanya");
+            usersDeck.AddFirst("Jonny");
+
+            foreach (string s in usersDeck)
+                Console.WriteLine(s);
+           
+            Console.WriteLine("\n Удален: {0} \n", usersDeck.RemoveLast());
+            Console.WriteLine("\n Удален: {0} \n", usersDeck.RemoveFirst());
+            
+            foreach (string s in usersDeck)
+                Console.WriteLine(s);
+            Console.ReadKey();
+        }
+    }
+
+
     class Program
     {
         static void Main(string[] args)
         {  
-            Lab3 l = new Lab3();
+            Lab8 l = new Lab8();
              
             //l.DefaultQueueShow();  
 
             //l.CircularQueueShow();  
 
-            l.Menu();    
+            l.Deque();    
                    
         }
     }      
