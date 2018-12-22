@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LabsClassLibrary
 {
     public class Search
-    { 
+    {  
         /// <summary>     
         ///  Определяет индекс первого вхождения отдельного символа или подстроки в строке:
         /// </summary>
@@ -132,8 +132,36 @@ namespace LabsClassLibrary
             }
 
             return res; 
-        } 
-    } 
+        }
+
+        /// <summary>
+        /// Поиск основы слова 
+        /// </summary>
+        /// <param name="text"></param> 
+        /// <returns></returns>
+        public static string Stemming(string text)
+        {
+            List<string> ending = new List<string> { "ly", "ed", "ing" };
+            List<string> prefix = new List<string> { "re", "de", "un", "dis", "non", "il", "pre" };
+
+            for (int i = 0; i < ending.Count; i++)
+            { 
+                int index = text.IndexOf(ending[i]);   
+                 
+                if (index != -1 && index >= (text.Count() - 3))
+                    text = text.Remove(index);
+            } 
+            for (int i = 0; i < prefix.Count; i++)   
+            {  
+                int index = text.IndexOf(prefix[i]);
+                   
+                if (index == 0)
+                    text = text.Remove(0, prefix[i].Length);
+            }
+            return text; 
+        }     
+             
+    }    
 
     public class StrCases
     {
@@ -178,7 +206,23 @@ namespace LabsClassLibrary
             Console.WriteLine("Индекс вхождения подстроки в строку: " + index);
             Console.ReadLine();
         }
-    } 
+
+        public static void Case4()
+        {
+            Console.WriteLine("Нахождение основы слова:");
+            Console.WriteLine("Введите слово: ");
+            string input = Console.ReadLine();
+            string output = string.Empty;
+            try  
+            {  
+                output = Search.Stemming(input);
+            } 
+            catch(Exception)
+            { }
+            Console.WriteLine("Результат: ");
+            Console.WriteLine(output);
+        }   
+    }  
 
    
 

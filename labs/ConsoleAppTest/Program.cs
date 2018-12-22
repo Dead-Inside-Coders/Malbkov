@@ -35,9 +35,9 @@ namespace ConsoleAppTest
                         break;
                     case 3:
                         StrCases.Case3();
-                        break;
-                    case 4: 
-                        Console.WriteLine("Case 4");
+                        break; 
+                    case 4:
+                        StrCases.Case4();
                         break;
                     default:
                         Console.WriteLine("Неверный ввод");
@@ -56,7 +56,7 @@ namespace ConsoleAppTest
 
     } 
 
-    public class lab4
+    public class Lab4
     {
         public string Name { get; } = "Алгоритмы поиска";
 
@@ -68,6 +68,8 @@ namespace ConsoleAppTest
 
             arr = ArraySearch.ArrayGenerate(Len);
 
+            Array.Sort(arr); 
+              
             Console.WriteLine("Массив: ");
             for (int i = 0; i < Len; i++)
             {
@@ -78,8 +80,8 @@ namespace ConsoleAppTest
 
             string inputElem = Console.ReadLine();
 
-            if (Int32.TryParse(inputElem, out int Elem))
-            {
+            if (int.TryParse(inputElem, out int Elem))
+            { 
 
                 Console.WriteLine("Выберите алгоритм: ");
                 Console.WriteLine("1. Двоичный поиск");
@@ -122,7 +124,7 @@ namespace ConsoleAppTest
         }
     }
      
-
+     
     public class Lab5
     {
         public string Name { get; } = "Алгоритмы сортировки";
@@ -188,6 +190,8 @@ namespace ConsoleAppTest
             stack.Push("Kate");
             stack.Push("Tom");
             stack.Push("Perry");
+             
+            stack.Print();
 
             string Head = stack.Pop(); //извлекаем один элемент      
 
@@ -199,19 +203,22 @@ namespace ConsoleAppTest
             Console.ReadKey(); 
 
         }
-         
+          
     }
     public class Lab7
     {
         public string Name { get; } = "Очереди";
 
-        public void Menu()
+        public void DefaultQueueShow()
         {
             Queue q = new Queue();
-             
+               
             q.Enqueue("Tom");
             q.Enqueue("Alice");
             q.Enqueue("Jim");
+
+            q.Print(); 
+
 
             string elem = q.Dequeue();
             Console.WriteLine("Извлекаем головной элемент очереди..." + $"({elem})");
@@ -219,20 +226,62 @@ namespace ConsoleAppTest
             Console.WriteLine(q.Peek());
             Console.ReadKey();
         }
-    }
 
+        public void CircularQueueShow()
+        {
+            CircularBuffer<int> queue = new CircularBuffer<int>(5);
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            queue.Enqueue(5);
+
+            while (!queue.IsEmpty)
+            {
+                Console.WriteLine("Dequeued {0}", queue.Dequeue());
+            }
+
+            Console.ReadKey();
+        } 
+
+        public void PriorityQueueShow()
+        {
+            PriorityQueue<double> queue = new PriorityQueue<double>();
+
+            queue.Add(2,-9.83);
+            queue.Add(3,0.0);
+            queue.Add(1, 5.45); 
+            queue.Add(4,1.0);
+            queue.Add(5,99.86);   
+
+            Console.WriteLine("Dequeued {0}", queue.RemoveMin());
+            Console.WriteLine("Dequeued {0}", queue.RemoveMin());
+            Console.WriteLine("Dequeued {0}", queue.RemoveMin());
+            Console.WriteLine("Dequeued {0}", queue.RemoveMin());
+            Console.WriteLine("Dequeued {0}", queue.RemoveMin()); 
+
+
+            Console.ReadKey(); 
+        }
+    } 
+      
+      
        
     class Program
-    { 
-         
+    {
         static void Main(string[] args)
-        { 
-            Lab3 l = new Lab3();  
-            Console.WriteLine(l.Name);
-            l.Menu(); 
-                  
+        {  
+            Lab3 l = new Lab3();
+             
+            //l.DefaultQueueShow();  
+
+            //l.CircularQueueShow();  
+
+            l.Menu();    
+                   
         }
-    }     
+    }      
 
 }
-  
+   

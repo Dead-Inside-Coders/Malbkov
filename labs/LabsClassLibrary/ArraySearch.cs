@@ -25,26 +25,6 @@ namespace LabsClassLibrary
         }
 
         /// <summary>
-        // Сортировка массива    
-        /// </summary>
-        /// <param name="Elements"></param>
-        private static void Sort(int[] Elements)
-        {
-            for (int i = 0; i < Elements.Length; i++)
-            {
-                for (int j = 0; j < Elements.Length - 1; j++)
-                {
-                    if (Elements[j] > Elements[j + 1])
-                    {
-                        int temp = Elements[j];
-                        Elements[j] = Elements[j + 1];
-                        Elements[j + 1] = temp;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
         // Есть ли смысл начинать поиск
         /// </summary>
         /// <returns></returns>
@@ -65,7 +45,7 @@ namespace LabsClassLibrary
         /// <returns></returns>
         public static int? BinarySearch(int[] Elements, int Element)
         {
-            Sort(Elements);
+            Array.Sort(Elements); 
 
             if (SearchCheck(Elements, Element)) 
             {
@@ -106,8 +86,8 @@ namespace LabsClassLibrary
         /// <returns></returns>
         public static int? BinarySearchRec(int[] Elements, int left, int right, int Element)
         {
-            Sort(Elements);
-             
+            Array.Sort(Elements); 
+
             if (SearchCheck(Elements, Element))
             {
                 if (left < right) //пока слева и справа от середины есть элементы 
@@ -156,7 +136,8 @@ namespace LabsClassLibrary
         /// <returns></returns>
         public static int? InterpolationSearch(int[] a, int key)
         {
-            Sort(a);
+            Array.Sort(a); 
+             
             if (SearchCheck(a, key))
             {
                 int left = 0;// левая граница поиска (будем считать, что элементы массива нумеруются с нуля) 
