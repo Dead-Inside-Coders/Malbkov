@@ -94,8 +94,8 @@ namespace LabsClassLibrary
                 {
                     int mid = (left + right) / 2; //определяем середину 
 
-                    if (Elements[right] == Element) //ели элемент найден, возвращаем его
-                        return right;
+                    if (Elements[left] == Element) //ели элемент найден, возвращаем его
+                        return left;
                     else if (Element <= Elements[mid]) //если элемент меньше или равен элементу в середине
                         BinarySearchRec(Elements, left, mid - 1, Element);//перемещаем правую границу
                     else

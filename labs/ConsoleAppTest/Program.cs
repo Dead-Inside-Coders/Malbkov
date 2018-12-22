@@ -18,7 +18,7 @@ namespace ConsoleAppTest
             Console.WriteLine("2.Алгоритм Рабина");
             Console.WriteLine("3.Алгоритм Кнута-Морриса-Пратта");
             Console.WriteLine("4.Стемминг");
-            Console.WriteLine("5.Дек (Лаба 8)");
+           
             string input = Console.ReadLine(); 
 
             int choose = 0;  
@@ -291,19 +291,74 @@ namespace ConsoleAppTest
             Console.ReadKey();
         }
     }
+    public class Lab9
+    {
+        private Linked_List<string> linkedList1 = new Linked_List<string>();
+        private Linked_List<string> linkedList2 = new Linked_List<string>();
+        public void Linked_List()
+        {
+            
+
+
+            Console.WriteLine("--добавление элементов--");
+            linkedList1.Add("Tom");
+            linkedList1.Add("Alice");
+            linkedList1.Add("Bob");
+            linkedList1.Add("Sam");
+
+            // выводим элементы
+            foreach (var item in linkedList1)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("--удаляем элемент--");
+            linkedList1.Remove("Alice");
+            Console.WriteLine("");
+            foreach (var item in linkedList1)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("--проверяем наличие элемента--");
+            bool isPresent = linkedList1.Contains("Sam");
+            Console.WriteLine("");
+            Console.WriteLine(isPresent == true ? "Sam присутствует" : "Sam отсутствует");
+            Console.WriteLine("");
+            Console.WriteLine("--добавляем элемент в начало--");
+            linkedList1.AppendFirst("Bill");
+            foreach (var item in linkedList1)
+            {
+                Console.WriteLine(item);
+            }
+            
+
+           
+            linkedList1.Add("Tom");
+            linkedList1.Add("Alice");
+            linkedList1.Add("Bob");
+            linkedList1.Add("Sam");
+
+            var Gaga = new Confluens();
+            var result = Gaga.Concat<string>(linkedList1, linkedList2);
+            Console.ReadKey();
+
+        }
+       
+    }
 
 
     class Program
     {
         static void Main(string[] args)
         {  
-            Lab8 l = new Lab8();
+            Lab9 l = new Lab9();
              
             //l.DefaultQueueShow();  
 
             //l.CircularQueueShow();  
 
-            l.Deque();    
+            l.Linked_List();    
                    
         }
     }      
