@@ -16,6 +16,7 @@ namespace LabsClassLibrary
         public T Data { get; set; }
         public Node<T> Next { get; set; }
     }
+       
     public class Confluens
     {
         public List<TType> Concat<TType>(params List<TType>[] lists)
@@ -34,7 +35,6 @@ namespace LabsClassLibrary
     {
         Node<T> head; // головной/первый элемент
         Node<T> tail; // последний/хвостовой элемент
-        int count;  // количество элементов в списке
 
         // добавление элемента
         public void Add(T data)
@@ -47,7 +47,7 @@ namespace LabsClassLibrary
                 tail.Next = node;
             tail = node;
 
-            count++;
+            Count++;
         }
         // удаление элемента
         public bool Remove(T data)
@@ -80,7 +80,7 @@ namespace LabsClassLibrary
                         if (head == null)
                             tail = null;
                     }
-                    count--;
+                    Count--;
                     return true;
                 }
 
@@ -90,14 +90,14 @@ namespace LabsClassLibrary
             return false;
         }
 
-        public int Count { get { return count; } }
-        public bool IsEmpty { get { return count == 0; } }
+        public int Count { get; private set; }
+        public bool IsEmpty { get { return Count == 0; } }
         // очистка списка
         public void Clear()
         {
             head = null;
             tail = null;
-            count = 0;
+            Count = 0;
         }
         // содержит ли список элемент
         public bool Contains(T data)
@@ -117,9 +117,9 @@ namespace LabsClassLibrary
             Node<T> node = new Node<T>(data);
             node.Next = head;
             head = node;
-            if (count == 0)
+            if (Count == 0)
                 tail = head;
-            count++;
+            Count++;
         }
         // реализация интерфейса IEnumerable
         IEnumerator IEnumerable.GetEnumerator()
@@ -135,7 +135,7 @@ namespace LabsClassLibrary
                 yield return current.Data;
                 current = current.Next;
             }
-        }
+        }                     
 
     }
 }

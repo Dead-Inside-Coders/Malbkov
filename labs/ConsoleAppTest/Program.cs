@@ -295,11 +295,10 @@ namespace ConsoleAppTest
     {
         private Linked_List<string> linkedList1 = new Linked_List<string>();
         private Linked_List<string> linkedList2 = new Linked_List<string>();
-        public void Linked_List()
+
+        public void ListShow()  
         {
-            
-
-
+             
             Console.WriteLine("--добавление элементов--");
             linkedList1.Add("Tom");
             linkedList1.Add("Alice");
@@ -336,17 +335,17 @@ namespace ConsoleAppTest
            
             linkedList1.Add("Tom");
             linkedList1.Add("Alice");
-            linkedList1.Add("Bob");
+            linkedList1.Add("Bob"); 
             linkedList1.Add("Sam");
 
-            var Gaga = new Confluens();
-            var result = Gaga.Concat<string>(linkedList1, linkedList2);
+            //var Gaga = new Confluens();
+            //var result = Gaga.Concat(linkedList1, linkedList2);
             Console.ReadKey();
-
+             
         }
        
     }
-
+     
 
     class Program
     {
@@ -358,10 +357,10 @@ namespace ConsoleAppTest
 
             //l.CircularQueueShow();  
 
-            l.Linked_List();    
+            l.ListShow();    
                    
         }
-    }      
+    }       
 
 }
    
