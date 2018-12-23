@@ -288,6 +288,9 @@ namespace ConsoleAppTest
             
             foreach (string s in usersDeck)
                 Console.WriteLine(s);
+            string gaga;
+            if (usersDeck.Contains("Tom")) gaga = "Tom"; else gaga = "Несодержит";
+            Console.WriteLine("\n Дек содержит: {0} \n", gaga);
             Console.ReadKey();
         }
     }
@@ -351,13 +354,13 @@ namespace ConsoleAppTest
     {
         static void Main(string[] args)
         {  
-            Lab9 l = new Lab9();
+            Lab7 l = new Lab7();
              
             //l.DefaultQueueShow();  
 
             //l.CircularQueueShow();  
 
-            l.ListShow();    
+            l.PriorityQueueShow();    
                    
         }
     }       

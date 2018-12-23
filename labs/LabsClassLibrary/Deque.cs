@@ -29,6 +29,20 @@ namespace LabsClassLibrary
          * Для добавления в начало очереди переустанавливаем ссылку на переменную head: 
          */
 
+        //Для добавления в начало очереди переустанавливаем ссылку на переменную head
+        public void AddFirst(T data)
+        {
+            DoublyNode<T> node = new DoublyNode<T>(data);
+            DoublyNode<T> temp = head;
+            node.Next = temp;
+            head = node;
+            if (count == 0)
+                tail = head;
+            else
+                temp.Previous = node;
+            count++;
+        }
+
         //Добавление элемента в конец дека вызывает аналогичную переустановку переменной tail
         
         public void AddLast(T data)
@@ -43,20 +57,6 @@ namespace LabsClassLibrary
                 node.Previous = tail;
             }
             tail = node;
-            count++;
-        }
-
-        //Для добавления в начало очереди переустанавливаем ссылку на переменную head
-        public void AddFirst(T data)
-        {
-            DoublyNode<T> node = new DoublyNode<T>(data);
-            DoublyNode<T> temp = head;
-            node.Next = temp;
-            head = node;
-            if (count == 0)
-                tail = head;
-            else
-                temp.Previous = node;
             count++;
         }
         //При удалении из начала дека надо переустановить ссылку на первый элемент
