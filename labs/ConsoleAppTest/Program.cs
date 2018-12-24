@@ -354,18 +354,10 @@ namespace ConsoleAppTest
     {
         static void Main(string[] args) 
         {  
-<<<<<<< Updated upstream
             Lab4 l = new Lab4();
-=======
-            Lab5 l = new Lab5();
->>>>>>> Stashed changes
-             
-            //l.DefaultQueueShow();  
-
-            //l.CircularQueueShow();   
 
             l.Menu();    
-                   
+                    
         }
     }       
 
