@@ -352,15 +352,15 @@ namespace ConsoleAppTest
 
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {  
-            Lab7 l = new Lab7();
+            Lab4 l = new Lab4();
              
             //l.DefaultQueueShow();  
 
-            //l.CircularQueueShow();  
+            //l.CircularQueueShow();   
 
-            l.PriorityQueueShow();    
+            l.Menu();    
                    
         }
     }       
