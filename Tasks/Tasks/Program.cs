@@ -30,11 +30,24 @@ namespace Tasks
             Console.ReadKey(); 
         }
                   
+        static void Sequence()
+        {
+            Console.WriteLine("Введите последовательность через пробел:");
+            string s = Console.ReadLine();
+            Sequence dad = new Sequence(s);
+            dad.PrintSequence();
+        }
         static void Main(string[] args) 
         {
             //FindTriangle.Find();  
             //CollatzProblem();
-            SubjectsCount();
+            // SubjectsCount();
+            Sequence();
+
+
+
+
+            
         }
         
        

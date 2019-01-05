@@ -9,10 +9,11 @@ namespace TasksDLL
 {
     public class Abbr
     {
-        private string[] subjects;
+        private string[] subjects;//массив предметов
 
-        private Dictionary<string, int> dict = new Dictionary<string, int>(); 
+        private Dictionary<string, int> dict = new Dictionary<string, int>(); //Создаем словарь предмет + частота повторения
 
+        //Конструктор
         public Abbr(string[] arr)
         {
             subjects = arr;
@@ -20,19 +21,20 @@ namespace TasksDLL
         
         private Dictionary<string, int> GetDictionary()
         {
-            Array.Sort(subjects);
+            Array.Sort(subjects);//Сортируем предметы
             int count = 1;
 
+            //Проходим циклом по предметам
             for (int i = 0; i < subjects.Length; i++)
             {
+               //Если не последний элемент
                 if (i != subjects.Length - 1)
                 {
-                    string s1 = subjects[i];
-                    string s2 = subjects[i + 1];
-
-                    if (s2.IndexOf(s1) == 0)
+                    //Смотрим на вхождение в сторку первых двух элементов из отсортированого массива "предметов"
+                    if (subjects[i + 1].IndexOf(subjects[i]) == 0)
                         count++;
 
+                    //Добавляем в словарь последний похожий элемент
                     else
                     {
                         dict.Add(subjects[i], count);
@@ -46,6 +48,7 @@ namespace TasksDLL
 
         }
 
+        //Печатаем элементы из словаря 
         public void PrintSubjects()
         {
             
