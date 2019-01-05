@@ -9,6 +9,16 @@ namespace Tasks
 {
     class Program
     { 
+        static void SubjectsCount()
+        {
+            Console.WriteLine("Введите предметы: ");
+            string input = Console.ReadLine();
+            string[] arr = input.Split(' ',',');
+            Abbr abbr = new Abbr(arr);
+            abbr.PrintSubjects();
+
+        }
+
         static void CollatzProblem()
         {
             Console.WriteLine("Введите cтепень n числа 2^n-1 ");
@@ -22,9 +32,12 @@ namespace Tasks
                   
         static void Main(string[] args) 
         {
-             //FindTriangle.Find();  
-            CollatzProblem();
-        } 
+            //FindTriangle.Find();  
+            //CollatzProblem();
+            SubjectsCount();
+        }
+        
+       
     }
 }
                                         
