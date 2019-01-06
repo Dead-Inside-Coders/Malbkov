@@ -45,7 +45,7 @@ namespace TasksDLL
         public void PrintSequence()
         {
             GetSequence();
-            string stroka=string.Empty;
+            string stroka = string.Empty;
             foreach (var item in Sequencearr)
             {
                 
