@@ -21,24 +21,10 @@ namespace TasksDLL
             Values = values;
             Sum = sum;
         }
-
-        public void SortValues()
-        {
-
-            for (int j = 0; j < Cnt + 1; j++)
-            {
-                for (int i = 0; i < Cnt - 1; i++)
-                {
-                    if (Values[i] > Values[i + 1])
-                    {
-                        int temp = Values[i];
-                        Values[i] = Values[i + 1];
-                        Values[i + 1] = temp;
-                    }
-                }
-            }
-        }
-
+   
+        /// <summary>
+        /// Выдать сумму минимальным количеством купюр
+        /// /// </summary>
         public void MinBillsLoop()
         {
             int[] bills = new int[Cnt + 1]; //количество купюр определенного номинала

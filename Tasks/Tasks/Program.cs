@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TasksDLL;
 
 namespace Tasks
 {
-    class Program
-    { 
+    class Program 
+    {  
         static void CoinExchange()
         {
             Console.WriteLine("*Coin Exchange*");
@@ -16,7 +12,7 @@ namespace Tasks
 
             try
             {
-                int count = Int32.Parse(Convert.ToString(Console.ReadLine()));
+                int count = int.Parse(Convert.ToString(Console.ReadLine()));
 
                 if (count < 1)
                     throw new Exception("Количество номиналов должно быть положительным");
@@ -25,24 +21,24 @@ namespace Tasks
                 Console.WriteLine("Введите значения номиналов:");
 
                 int[] values = new int[count + 1];
-
+                 
                 for (int i = 1; i < count + 1; i++)
                 {
                     Console.Write(i + ".");
-                    values[i] = Int32.Parse(Convert.ToString(Console.ReadLine()));
+                    values[i] = int.Parse(Convert.ToString(Console.ReadLine()));
                     if (values[i] < 1)
                         throw new Exception("Значение номиналов должно быть положительным");
                 }
 
                 Console.WriteLine("Введите сумму , которую необходимо выдать:");
 
-                int sum = Int32.Parse(Convert.ToString(Console.ReadLine()));
+                int sum = int.Parse(Convert.ToString(Console.ReadLine()));
 
                 if (sum < 1)
                     throw new Exception("Сумма должна быть положительной");
-
+                 
+                Array.Sort(values);
                 CoinExchange FirstOp = new CoinExchange(count, values, sum);
-                FirstOp.SortValues();
                 FirstOp.MinBillsLoop();
 
             }
@@ -62,7 +58,7 @@ namespace Tasks
             Console.ReadKey();
              
         }
-
+         
         static void SubjectsCount()
         {
             Console.WriteLine("Введите предметы: ");
@@ -75,9 +71,9 @@ namespace Tasks
         static void CollatzProblem()
         {
             Console.WriteLine("Введите cтепень n числа 2^n-1 ");
-            double n = Int32.Parse(Console.ReadLine());
+            double n = int.Parse(Console.ReadLine());
             Console.WriteLine("Введите M");
-            double M = Int32.Parse(Console.ReadLine());
+            double M = int.Parse(Console.ReadLine());
 
             Console.WriteLine(Convert.ToString(Collatz.IsExistK(n, M)));
             Console.ReadKey(); 
@@ -93,10 +89,10 @@ namespace Tasks
         static void Main(string[] args) 
         {
             //FindTriangle.Find();  
-            //CollatzProblem();
+            CollatzProblem();
             // SubjectsCount();
             //Sequence();
-            CoinExchange();
+            //CoinExchange();
   
         }
         
